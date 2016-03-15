@@ -36,7 +36,7 @@
 
 <div id="main-content" class="container container--wrap g--12 no-margin no-pad bg--black">
 
-	<div class="g--10 m--1 page-placeholder" v-show="list[0] == null">
+	<div class="g--10 m--1 page-placeholder no-margin-vertical" v-show="list[0] == null">
 		<h4>A search engine / media player optimized for live music on YouTube.</h4>
 	</div>
 
@@ -52,7 +52,7 @@
 </div>
 
 <footer class="g--12 no-margin-vertical bg--black" :class="{'footer-bottom': list[0] == null}">
-	<div class="g--10 m--1 footer-content">
+	<div class="g--10 m--1 no-margin-vertical footer-content">
 		<img class="logo-footer" src="img/datavdata_logo.png">
 		<p id="copyright" class="color--white no-margin-vertical">
             Copyright &copy; <script type="text/javascript">var d = new Date();document.write(d.getFullYear());</script>
