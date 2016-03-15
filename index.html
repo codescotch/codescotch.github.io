@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.3/lity.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/queries.css">
+	<link rel="stylesheet" type="text/css" href="css/libs/app.css">
+	<title>YouTube Live Music Engine</title>
+</head>
+<body class="bg--black">
+
+<header id="header" class="bg--turquoise">
+	<div class="g--10 m--1 container container--wrap--s no-margin-vertical">
+		<div id="main-heading" class="g--6 g-m--7 g-s--12 g-t--12">
+			<h1 class="no-margin">LiveTube <span style="font-size: 50%">(beta)</span></h1>
+			<p class="no-margin color--white">Search for live music on YouTube</p>
+		</div>
+
+		<form @submit.prevent="fetchVideoList"
+			  id="search-form"
+			  class="card g--4 m--2 g-m--6 g-s--12 m-s--0 g-t--12 m-t--0">
+			<input v-model="search"
+				   id="search-box"
+				   class="left"
+				   type="text"
+				   placeholder="Search for an artist or festival..."
+				   required>
+			<button type="submit" class="right btn--raised btn--primary">Go</button>
+		</form>
+
+	</div>
+
+</header>
+
+<div id="main-content" class="container container--wrap g--12 no-margin no-pad bg--black">
+
+	<div class="g--10 m--1 page-placeholder" v-show="list[0] == null">
+		<h4>A search engine / media player optimized for live music on YouTube.</h4>
+	</div>
+
+	<div class="g--3 g-m--4 g-s--6 g-t--12 fade-in-from-top anim-delay--5 no-margin" v-for="video in list">
+		<a :href="'//www.youtube.com/watch?v=' + video.id.videoId" data-lity>
+			<img :src="video.snippet.thumbnails.high.url">
+		</a>
+
+		<div class="video-title">
+			<p class="">{{ video.snippet.title }}</p>
+		</div>
+	</div>
+</div>
+
+<footer class="g--12 no-margin-vertical bg--black" :class="{'footer-bottom': list[0] == null}">
+	<div class="g--10 m--1 footer-content">
+		<img class="logo-footer" src="img/datavdata_logo.png">
+		<p id="copyright" class="color--white no-margin-vertical">
+            Copyright &copy; <script type="text/javascript">var d = new Date();document.write(d.getFullYear());</script>
+        </p>
+	</div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/vue/1.0.17/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/vue.resource/0.7.0/vue-resource.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.3/lity.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

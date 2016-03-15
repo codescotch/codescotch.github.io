@@ -1,0 +1,25 @@
+@media only screen and (max-width: 1200px) {
+	#header {
+		margin-bottom: 0px;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	#main-heading h1 {
+		font-size: 150%;
+	}
+
+	#main-heading p {
+		font-size: 90%;
+
+	}
+
+	#main-heading {
+		margin-top: 0;
+
+	}
+
+	#search-form {
+		margin-bottom: 40px;
+	}
+}
