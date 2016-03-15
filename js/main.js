@@ -3,7 +3,7 @@ new Vue({
     props: ['search', 'maxResults', 'list'],
     data: {
         search: '',
-        maxResults: 48,
+        maxResults: 12,
         list: []
     },
     methods: {
@@ -24,6 +24,11 @@ new Vue({
                 });
             // console.log(this.list);
             // this.$http.get('/someUrl', [data], [options]).then(successCallback, errorCallback);
+        },
+        convertPublishedAt: function (publishedAt) {
+            return new Date(publishedAt)
+                .toString()
+                .substr(4, 11);
         }
     }
 });

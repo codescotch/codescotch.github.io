@@ -1,11 +1,7 @@
 /* HEADER
 ******************************************************/
 
-#header {
-	margin-bottom: 0;
-}
-
-#main-heading p {
+.main-heading p {
 	font-weight: 100;
 }
 
@@ -17,12 +13,18 @@
 /* MAIN CONTENT
 ******************************************************/
 
-.video-title {
-	padding: 20px;
+.video-details {
+	padding: 10px 20px 20px 20px;
 }
 
-.video-title p {
-	color: #cbcbcb;
+.video-title {
+    color: #cbcbcb;
+}
+
+.video-date {
+	font-weight: 100;
+	font-size: 80%;
+    color: #818181;
 }
 
 .lity-wrap {
@@ -41,7 +43,7 @@ footer {
 .page-placeholder {
 	font-weight: 100;
 	text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
 .page-placeholder h4 {
@@ -59,7 +61,7 @@ footer {
 }
 
 .footer-content p {
-    margin-top: 10px;
+	margin: 10px 0 10px 0;
 	font-weight: 100;
 	color: #cbcbcb;
 }
