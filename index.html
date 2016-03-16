@@ -14,13 +14,13 @@
 <!-- HEADER
 ************************************************************* -->
 
-<header class="bg--turquoise">
+<header class="bg--turquoise no-margin-vertical">
 	<div class="g--10 m--1 container container--wrap--s no-margin-vertical">
 		<div class="main-heading g--6 g-m--7 g-s--12 g-t--12">
 			<h1 class="no-margin">
 				LiveTube <span style="font-size: 50%">(beta)</span>
 			</h1>
-			<p class="no-margin color--white">Search for live music on YouTube</p>
+			<p class="no-margin color--white">Watch full concerts from YouTube</p>
 		</div>
 
 		<form id="search-form"
@@ -62,8 +62,8 @@
 
 <footer class="g--12 no-margin-vertical bg--black" :class="{'footer-bottom': list[0] == null}">
 	<div class="g--10 m--1 no-margin-vertical footer-content">
-		<div class="page-placeholder fade-in-from-bottom anim-delay--5" v-show="list[0] == null">
-			<h4>A search engine / media player optimized for live music on YouTube.</h4>
+		<div class="page-placeholder fade-in-from-bottom" v-show="list[0] == null">
+			<h4>A search engine / media player optimized for YouTube concerts.</h4>
 		</div>
 		<img src="img/datavdata_logo.png" class="logo-footer">
 		<p class="color--white no-margin-vertical">
