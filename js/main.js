@@ -26,9 +26,14 @@ new Vue({
             // this.$http.get('/someUrl', [data], [options]).then(successCallback, errorCallback);
         },
         convertPublishedAt: function (publishedAt) {
-            return new Date(publishedAt)
-                .toString()
-                .substr(4, 11);
+            var date = new Date(publishedAt)
+                .toString();
+            var month = date.substr(4, 3),
+                day = date.substr(8, 2),
+                year = date.substr(11, 4);
+            day = parseInt(day, 10);
+            date = month + ' ' + day + ' ' + year;
+            return date;
         }
     }
 });

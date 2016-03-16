@@ -18,13 +18,20 @@
 }
 
 .video-title {
-    color: #cbcbcb;
+    color: #bababa;
+}
+
+.video-uploaded {
+	font-size: 80%;
+    font-weight: 100;
+    color: #6d6d6d;
+	margin-right: 5px;
 }
 
 .video-date {
-	font-weight: 100;
 	font-size: 80%;
-    color: #818181;
+	color: #6d6d6d;
+    font-weight: 500;
 }
 
 .lity-wrap {
@@ -47,7 +54,7 @@ footer {
 }
 
 .page-placeholder h4 {
-	color: #cbcbcb;
+	color: #bababa;
 }
 
 .logo-footer {
@@ -63,7 +70,7 @@ footer {
 .footer-content p {
 	margin: 10px 0 10px 0;
 	font-weight: 100;
-	color: #cbcbcb;
+	color: #bababa;
 }
 
 .footer-bottom {

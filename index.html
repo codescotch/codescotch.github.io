@@ -48,7 +48,11 @@
 		</a>
 		<div class="video-details">
 			<p class="video-title">{{ video.snippet.title }}</p>
-			<p class="video-date">Uploaded: {{ convertPublishedAt(video.snippet.publishedAt) }}</p>
+			<p class="video-uploaded left">Uploaded </p>
+			<div class="video-date left">
+				{{ convertPublishedAt(video.snippet.publishedAt) }}
+			</div>
+            
 		</div>
 	</div>
 </div>
