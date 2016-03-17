@@ -8,7 +8,7 @@ new Vue({
     props: ['search', 'maxResults', 'list'],
     data: {
         search: '',
-        maxResults: 48,
+        maxResults: 12,
         list: [],
         listDetails: []
     },
@@ -86,7 +86,10 @@ new Vue({
             return date;
         },
         openLightbox: function (videoId) {
-            var lightbox = lity();
+            var lightbox = lity({
+                'template': '<div class="lity" tabindex="-1"><div class="lity-wrap"><div class="lity-loader">Loading...</div><div class="lity-container"><div class="lity-content"></div><button class="lity-close" type="button" title="Close (Esc)" data-lity-close>×</button></div></div></div>'
+            });
+
             lightbox('//www.youtube.com/watch?v=' + videoId);
         }
     }
