@@ -3,11 +3,12 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.3/lity.min.css">
 	<link rel="stylesheet" type="text/css" href="css/libs/app.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/queries.css">
-	<title>YouTube Live Music Engine</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.3/lity.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/queries.css">
+	<title>LiveTube: YouTube Live Music Engine</title>
 </head>
 <body class="bg--black">
 
@@ -43,11 +44,29 @@
 <div class="container container--wrap g--12 no-margin no-pad bg--black">
 
 	<div v-for="video in list" class="g--3 g-m--4 g-s--6 g-t--12 fade-in-from-top anim-delay--5 no-margin">
-		<a :href="'//www.youtube.com/watch?v=' + video.id.videoId" data-lity>
-			<img :src="video.snippet.thumbnails.high.url">
+		<a @click.prevent="openLightbox(video.id.videoId)" href="">
+			<img :src="video.snippet.thumbnails.medium.url">
 		</a>
-		<div class="video-details">
+
+		<div class="video-details fade-in-from-top anim-delay--5">
 			<p class="video-title">{{ video.snippet.title }}</p>
+			<!-- VIDEO STATS
+			**************************************** -->
+			<div class="video-stats g--12 container--wrap no-margin-vertical">
+				<div class="g--4 no-margin-vertical">
+					<i class="material-icons color--k-yellow">remove_red_eye</i>
+					<p class="">{{ this.listDetails[this.list.indexOf(video)].statistics.viewCount | number }}</p>
+				</div>
+				<div class="g--4 no-margin-vertical">
+					<i class="material-icons color--k-green">thumb_up</i>
+					<p class="">{{ this.listDetails[this.list.indexOf(video)].statistics.likeCount | number }}</p>
+				</div>
+				<div class="g--4 no-margin-vertical">
+					<i class="material-icons color--k-red">thumb_down</i>
+					<p class="">{{ this.listDetails[this.list.indexOf(video)].statistics.dislikeCount | number }}</p>
+				</div>
+			</div>
+
 			<p class="video-uploaded left">Uploaded </p>
 			<div class="video-date left">
 				{{ convertPublishedAt(video.snippet.publishedAt) }}
@@ -62,12 +81,12 @@
 
 <footer class="g--12 no-margin-vertical bg--black" :class="{'footer-bottom': list[0] == null}">
 	<div class="g--10 m--1 no-margin-vertical footer-content">
-		<div class="page-placeholder fade-in-from-bottom" v-show="list[0] == null">
-			<h4>A search engine / media player optimized for YouTube concerts.</h4>
+		<div class="page-placeholder" v-show="list[0] == null">
+			<h4 class="fade-in-from-bottom anim-delay--5">free concerts at your fingertips</h4>
 		</div>
 		<img src="img/datavdata_logo.png" class="logo-footer">
 		<p class="color--white no-margin-vertical">
-            Copyright &copy; <script type="text/javascript">var d = new Date();document.write(d.getFullYear());</script>
+            Copyright &copy; {{ currentYear }}
         </p>
 	</div>
 </footer>
