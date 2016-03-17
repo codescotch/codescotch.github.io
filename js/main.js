@@ -8,7 +8,7 @@ new Vue({
     props: ['search', 'maxResults', 'list'],
     data: {
         search: '',
-        maxResults: 12,
+        maxResults: 48,
         list: [],
         listDetails: []
     },
